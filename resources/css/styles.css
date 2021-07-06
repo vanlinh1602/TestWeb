@@ -1,0 +1,284 @@
+/*------------------------------*/
+/**************Defaul set up******************/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #5a5a5a;
+    background-color: #ffffff;
+    text-rendering: optimizeLegibility;
+}
+
+/*---------------------------------------------*/
+/*---------------Reusable conponent----------------*/
+.clearfix::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.btn{
+    text-decoration: none;
+    color: white;
+    background-color: #e67e22;
+    padding: 15px 30px;
+    border-radius: 20px;
+    margin: 0 5px;
+    display: inline-block;      /*chuyển qua thuộc tính block để chỉnh width với hight*/
+    width: 190px;
+    text-align: center;         /*canh giữa chữ*/
+    transition: all .3s;        
+}
+
+.btn:hover,
+.btn:active{                    /*hoạt động khi di chuyển con chuột vào*/
+    background-color: #d35400;
+}
+
+h1,h2,h3{
+    text-transform: uppercase;  /*in hoa*/
+    letter-spacing: 1px ;   /*khoảng cách giữa các chữ cái*/
+}
+
+h1{
+    font-size: 300%;
+    font-weight: 400;
+    color: white;
+    
+    word-spacing: 5px;      /*khoảng cách giữa các chữ*/
+    line-height: 135%;          /*khoảng cách giữa các dòng*/
+    margin-bottom: 50px;
+}
+
+h2{
+   
+    font-size: 190%;
+    font-weight: 700;
+    color: #e67e22;
+    text-align: center;
+}
+
+h2::after{
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: rgba(230, 126, 34,0.5);
+    margin: 0 auto;
+    margin-top: 3px;
+}
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.p-long{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #265077;
+    text-align: center;
+    line-height: 140%;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 22px;
+}
+section{
+    padding: 50px;
+}
+h3{
+    background-color: #265077;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 15px;
+}
+/*---------------------------------------------------*/
+/*---------------------HEADER------------------------*/
+/*---------------------------------------------------*/
+header{
+    background-image: linear-gradient(45deg, rgba(2,33,64,0.8) 55%,rgba(45,95,93,0.75)), url(../img/background4.jpeg);
+    /*            (phối màu background: góc          màu 1                   màu 2          ) và liên kết hình ảnh*/
+    background-size: cover;
+    /* background chỉnh kích thước vừa với trang web */
+    background-position: center;
+    /* chỉnh background ở giữa*/
+    background-attachment: fixed;
+    /* chỉnh background cố định khi lăn chuột*/
+    height: 100vh;
+}
+
+.logo{
+    width: 350px;  /*kích thước logo*/
+    float: left;    /*trôi về bên trái*/
+    margin-top: -50px;  /*lề trên -50px*/
+    margin-left: 100px;  /*lề trái 30px*/ 
+}
+
+.main-nav{
+    float: right;   /*trôi về bên phải*/
+    list-style: none;   /*xoá style list mặc định*/
+    margin-top: 55px;
+    margin-right: 50px;
+}
+
+.main-nav li {
+    display: inline-block; /*tạo block chi inline*/
+    margin-right: 30px;
+}
+
+.main-nav li a{
+    text-decoration: none;  /*xoá gạch chân*/
+    color: #cccccc;
+    font-size: 110%;
+    font-weight: 700;
+    transition: 0.5s;   /*hiệu ứng chuyển động*/
+    padding: 3px 0px;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #cccccc;
+}
+
+.heading-main-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%,-55%);
+    width: 1140px; 
+}
+/*---------------------------------------------*/
+/*----------------ABOUT SECTION----------------*/
+.about-picture{
+    position: relative;
+    margin-top: 50px;
+}
+
+.about-picture img{
+    width: 90%;
+    border-radius: 20px;
+    border: 4px solid #c2e1fd;  /*tạo border*/
+    /*hiệu chỉnh border*/
+    border-color: #ffffff00;
+    box-shadow: 0 5px 15px 0 #265077;
+    /* x - y - độ mờ - độ phóng rộng - màu */
+}
+
+.picture-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, 100%);
+    color: #c2e1fd;
+    opacity: 0;   /*độ mờ*/
+    transition: all .7s;
+}
+.about-picture:hover img,
+.about-picture:active img{
+    filter: brightness(55%) blur(2px);
+    /*filter  độ sáng           mờ*/
+}
+
+.about-picture:hover .picture-title,
+.about-picture:active .picture-title{
+    opacity: 1;
+    transform: translate(-65%, 0%);
+}
+/* ---------------------------------------- */
+/* ---------------PRODUCT-SECTION---------- */
+/* ---------------------------------------- */
+.products-section{
+    background-color: #f4f4f4;
+}
+.products-section h2{
+    margin-bottom: 60px;
+}
+.product-box{
+    width: 90%;
+    height: 350px;
+    background-color: #eeefff;
+    box-shadow: 3px 5px 10px #e0e0e0;
+}
+
+.product-price{
+    font-size: 250%;
+    font-weight: 300;
+    text-align: center;
+    color: #267077;
+}
+ 
+.product-price span{
+    font-size: 80%;
+}
+.product-box ul li{
+    margin-left: 20%;
+    margin-bottom: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+.small-icon{
+    color: #305679;
+    font-size: 140%;
+    margin-right: 10px;
+}
+.product-box .btn{
+    margin-left: 20%;
+}
+/* -------------------------------------- */
+/* ---------TESTIMONIALS----------------- */
+/*----------------------------------------*/
+.testimonials-section{
+    background-image: linear-gradient(45deg, rgba(2,33,64,0.8) 55%,rgba(45,95,93,0.75)), url(../img/background2.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.testimonials-section h2{
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+blockquote{
+    color: white;
+    width: 90%;
+    position: relative;
+    font-style: italic;
+    line-height: 140%;
+}
+
+blockquote::before{
+    content: '\201C';
+    font-size: 400%;
+    display: block;
+    position: absolute;
+    margin-top: -15px;
+}
+
+cite{
+    display: block;
+    margin-top: 30px;
+    color: #5e83a7;
+    
+}
+
+cite img{
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #cccccc;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+
+
+
